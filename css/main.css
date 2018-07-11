@@ -111,6 +111,7 @@ p {
 #clock-box {
     width:75vw;
     height:20vh;
+    max-height: 200px;
     /*background-color: blue;*/
     display:flex;
     justify-content: center;
@@ -271,8 +272,18 @@ p {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 1000px) {
     /* Style adjustments for viewports that meet the condition */
+    .label {
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    /* Style adjustments for viewports that meet the condition */
+    .label {
+        margin-top: 0px;
+    }
 }
 
 @media print,
