@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Max Timer</title>
+  <meta name="Max Timer" content="Timer">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- content -->
+ 
+      <!-- Display the countdown timer in an element -->
+  <div class="bg">
+    <div id="clock-box" class="abs-center">
+      <div class="timer">
+        <div class="timer-element">
+          <p id="days"></p>
+        </div> 
+        <div class="timer-element">
+          <p id="hours"></p>
+        </div>
+        <div class="timer-element">
+          <p id="minutes"></p>
+        </div>
+        <div class="timer-element">
+          <p id="seconds"></p>
+        </div>
+        <div class="timer-element">
+          <p id="milliseconds"></p>
+        </div>
+      </div>
+
+      <div class="divider">
+      </div>
+
+      <div class="labels">
+        <div class="label">
+          <p>days</p>
+        </div>
+        <div class="label">
+          <p>hours</p>
+        </div>
+        <div class="label">
+          <p>minutes</p>
+        </div>
+        <div class="label">
+          <p>seconds</p>
+        </div>
+        <div class="label">
+          <p>milliseconds</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Dec 7, 2018 15:37:25").getTime();
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get todays date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now an the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      var milliseconds = Math.floor(distance % 1000);
+
+      // Display the result in the element with id="demo"
+
+      //document.getElementById("clock").innerHTML = days + "d " + hours + "h "
+      //+ minutes + "m " + seconds + "s " + milliseconds + "ms ";
+
+      document.getElementById("days").innerHTML = days;
+
+      document.getElementById("hours").innerHTML = hours;
+
+      document.getElementById("minutes").innerHTML = minutes;
+
+      document.getElementById("seconds").innerHTML = seconds;
+
+      document.getElementById("milliseconds").innerHTML = milliseconds;
+
+      // If the count down is finished, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1);
+  </script>
+
+
+
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  </script>
+
+ 
+</body>
+
+</html>
