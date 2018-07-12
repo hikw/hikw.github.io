@@ -108,6 +108,16 @@ p {
     font-weight: 700;
 }
 
+.name-block {
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+    height:100px;
+    font-size: 3vw;
+    text-align: center;
+}
+
 #clock-box {
     width:75vw;
     height:20vh;
@@ -120,7 +130,7 @@ p {
 .abs-center {
     position: absolute;
     margin: auto;
-    top: 0;
+    top: 4vw;
     right: 0;
     bottom: 0;
     left: 0;
@@ -158,19 +168,25 @@ p {
     align-items: center;
     height: 50%;
     width:100%%;
-    /*border: solid #fff;
-    border-width: 1px;*/
+    border: solid #fff;
+    border-width: 1px;
     font-size: 7vw;
+}
+
+.timer-element > p {
+    -ms-transform: translate(0, -3.5vw); /* IE 9 */
+    -webkit-transform: translate(0, -3.5vw); /* Safari */
+    transform: translate(0, -3.5vw);
 }
 
 .label {
     display:flex;
     justify-content: center;
     align-items: center;
-    height:50%;
+    height:0;
     width:100%;
-    margin-top:30px;
-    /*border: solid #000;
+    /*margin-top:50px;
+    border: solid #000;
     border-width: 1px;*/
     font-size: 1vw;
 }
@@ -272,17 +288,10 @@ p {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-height: 320px) {
     /* Style adjustments for viewports that meet the condition */
-    .label {
-        margin-top: 15px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    /* Style adjustments for viewports that meet the condition */
-    .label {
-        margin-top: 0px;
+    .name-block {
+        visibility: hidden;
     }
 }
 
