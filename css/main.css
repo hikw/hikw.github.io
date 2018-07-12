@@ -168,8 +168,8 @@ p {
     align-items: center;
     height: 50%;
     width:100%%;
-    border: solid #fff;
-    border-width: 1px;
+    /*border: solid #fff;
+    border-width: 1px;*/
     font-size: 7vw;
 }
 
